@@ -1,4 +1,5 @@
 # kustomize_example
+<pre>
 作用
     通过将当前目录与依赖的目录的yaml文件进行整合，生成新的yaml文件；通常将通用声明放到base目录中，将需要个性化的声明放到不同的overlay目录，不同overlay目录引用base目录，build生成不同的完整的yaml。
 术语与概念
@@ -95,3 +96,4 @@
         kustomize build  ./overlays/dev
     按照规则生成variant并在集群执行
         kustomize build ./overlays/dev   |  kubectl apply -f - 
+</pre> 
