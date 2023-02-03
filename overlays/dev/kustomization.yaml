@@ -1,0 +1,22 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+bases:
+  - ../../base
+patchesStrategicMerge:
+  - replication.yaml
+generatorOptions:
+  disableNameSuffixHash: true
+  labels:
+    kustomization_generator_key: nginx
+  annotations:
+    kustomization_generator_annotation_key: nginx
+configMapGenerator:
+  - name: conf-nginx
+    files:
+      - nginx.conf
+images:
+  - name: registry.cn-zhangjiakou.aliyuncs.com/xiaoduoai/ecrobot-goods-classification
+    newTag: v3
+namePrefix: test-
+namespace: namespace-test
+
