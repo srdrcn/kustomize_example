@@ -4,7 +4,7 @@ metadata:
   name: nginx-service
 spec:
   type:
-    ClusterIP
+    NodePort
   selector:
     app: nginx
   ports:
